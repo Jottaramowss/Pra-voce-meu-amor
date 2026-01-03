@@ -4,63 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Minha Princesa</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #ffe9e9 0%, #ffc3a0 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
-            color: #d63384;
-            text-align: center;
-        }
-
-        .container {
-            padding: 20px;
-            z-index: 2;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            animation: fadeIn 3s ease-in;
-        }
-
-        p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            max-width: 500px;
-            background: rgba(255, 255, 255, 0.4);
-            padding: 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        /* Corações flutuantes */
-        .heart {
-            position: absolute;
-            font-size: 20px;
-            color: #ff4d6d;
-            animation: float 6s infinite linear;
-            opacity: 0.6;
-            z-index: 1;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -69,33 +13,6 @@
         <p id="mensagem"></p>
     </div>
 
-    <script>
-        const texto = "Passando para te lembrar que, mesmo que o céu esteja cinza hoje, eu estou aqui. Não precisa dizer nada se não quiser, só quero que saiba que estarei com você em cada momento, nos melhores e principalmente nos mais difíceis. Meu colo e meu amor são sempre seus. Amo você.";
-        let i = 0;
-
-        function digitar() {
-            if (i < texto.length) {
-                document.getElementById("mensagem").innerHTML += texto.charAt(i);
-                i++;
-                setTimeout(digitar, 50);
-            }
-        }
-
-        function criarCoracao() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 3 + 3 + 's';
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 6000);
-        }
-
-        setInterval(criarCoracao, 500);
-        window.onload = digitar;
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
